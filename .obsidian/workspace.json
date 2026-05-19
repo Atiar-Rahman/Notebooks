@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "6999115eca1ecb24",
+    "type": "split",
+    "children": [
+      {
+        "id": "52743be4deba1475",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ace7188e4344aef6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer vision/model convert to .onnx.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "model convert to .onnx"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "980cf5f23997a720",
+    "type": "split",
+    "children": [
+      {
+        "id": "dade93f92b7ccba0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07b7755641f9c9c3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "559b040cae0eaf7a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "05dc140a78fea3a8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 212.5
+  },
+  "right": {
+    "id": "0a65343956ed9a8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "58afec7cc6fc1c0e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8960676be8cc0aca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "django/drf/drf media.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "drf media",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for drf media"
+            }
+          },
+          {
+            "id": "cec94d2312317b32",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "All subject task fall-2025/8085/for clp.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from for clp"
+            }
+          },
+          {
+            "id": "212abef6a69f76d1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3831146ef8242e09",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "All subject task fall-2025/8085/for clp.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of for clp"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ace7188e4344aef6",
+  "lastOpenFiles": [
+    "job/Untitled.md",
+    "Computer vision/model convert to .onnx.md",
+    "web/react/modul use.md",
+    "web/react/react - router -dom component.md",
+    "web/react/react router dom.md",
+    "web/react/layouts.md",
+    "LLM/what is llm.md",
+    "LLM",
+    "ai tool/update.md",
+    "django/deploy/fly.io.md",
+    "ai tool/List of ai TOOLs.md",
+    "web/typescript/basic typescript.md",
+    "Computer vision/Code explain/onnx use for realtime.md",
+    "web/typescript",
+    "Computer vision/Code explain/video to convert frame.md",
+    "Computer vision/Code explain/perfect checklist for every training project.md",
+    "Computer vision/Code explain/pretrain model train.md",
+    "django/secret key generate.md",
+    "django/all doc link.md",
+    "django/deploy/Untitled.md",
+    "django/deploy/deploy django project fly.io.md",
+    "Computer vision/Code explain/split dataset.md",
+    "Computer vision/Code explain/dataset code.md",
+    "English Vokubolary/day1.md",
+    "Computer vision/Code explain/increase accuracy.md",
+    "Computer vision/Code explain",
+    "kernel setup for jupiternotebook/kernel setup step by step.md",
+    "report writting/topic for report.md",
+    "All subject task fall-2025/Interview/js.md",
+    "ai tool",
+    "job",
+    "react native",
+    "Pasted image 20260430100021.png",
+    "Pasted image 20260430095630.png",
+    "django/payment ADD",
+    "C-net",
+    "report writting",
+    "django/invoice",
+    "Screenshot from 2026-04-03 14-58-36.png",
+    "Screenshot from 2026-04-03 14-57-48.png",
+    "django/image/Pasted image 20260316002312.png",
+    "django/image/Pasted image 20260316002017.png",
+    "django/image/Pasted image 20260316001417.png",
+    "Docker/Pasted image 20260310194444.png",
+    "Docker/Pasted image 20260310194307.png",
+    "Docker/Pasted image 20260310193124.png"
+  ]
+}

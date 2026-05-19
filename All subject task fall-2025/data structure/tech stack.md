@@ -1,0 +1,1 @@
+Python, TensorFlow, PyTorch, LLMs, Vector Databases, MLOps, Docker, Kubernetes, AWS, GCP
