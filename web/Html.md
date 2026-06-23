@@ -39,12 +39,12 @@
 
 ### Explanation:
 
-|Tag|কাজ|
-|---|---|
-|`<!DOCTYPE html>`|HTML5|
-|`<html>`|Root element|
-|`<head>`|Meta info|
-|`<body>`|Visible content|
+| Tag               | কাজ             |
+| ----------------- | --------------- |
+| `<!DOCTYPE html>` | HTML5           |
+| `<html>`          | Root element    |
+| `<head>`          | Meta info       |
+| `<body>`          | Visible content |
 
 ---
 

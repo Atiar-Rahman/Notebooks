@@ -1,182 +1,147 @@
+Now we have the exact root cause in your log:
 
----
+### 🚨 Key error
 
-## 🔌 USB webcam auto off – next fixes
-
-### 1️⃣ USB power control force করে “on” করো
-
-আগে webcam কোন device সেটা বের করি:
-
-```bash
-lsusb
 ```
+Requested GL implementation (gl=none,angle=none) not found in allowed implementations
+(gl=egl-angle,angle=default)
 
-এখানে webcam-এর line দেখাবে (যেমন: _USB Camera_, _Logitech_, _HD Webcam_ ইত্যাদি)
-
-এখন USB power status দেখো:
-
-```bash
-cat /sys/bus/usb/devices/*/power/control
-```
-
-সব জায়গায় `auto` থাকলে, আমরা `on` করে দেব।
-
-👉 Quick fix:
-
-```bash
-for i in /sys/bus/usb/devices/*/power/control; do echo on | sudo tee $i; done
+Exiting GPU process due to errors during initialization
+GPU process was unable to boot: GPU access is disabled due to frequent crashes
 ```
 
 ---
 
-### 2️⃣ USB port change করো (surprisingly effective 😅)
+## 💥 What this actually means
 
-- Front USB → Rear USB (বা উল্টোটা)
+Chrome is **NOT failing because of your AMD driver**.
+
+It is failing because:
+
+> Chrome is trying to use ANGLE/OpenGL backend, but your system/Chrome build is missing or blocked from using EGL-ANGLE.
+
+So Chrome ends up in this broken state:
+
+- GPU process starts ❌
     
-- USB hub থাকলে **hub বাদ দিয়ে direct laptop/PC-তে** লাগাও
+- ANGLE backend selection fails ❌
+    
+- GPU process crashes repeatedly ❌
+    
+- Chrome permanently blacklists GPU ❌
+    
+- WebGL disabled completely ❌
     
 
 ---
 
-### 3️⃣ Webcam driver reset (without reboot)
+## 🧠 Why this is happening (most likely)
 
-```bash
-sudo modprobe -r uvcvideo
-sudo modprobe uvcvideo
-```
+One of these is true:
 
-তারপর test:
+### 1. Broken/missing ANGLE/EGL support in your Chrome build
 
-```bash
-cheese
-```
+Your Chrome package is not correctly linking to EGL/OpenGL backend.
 
----
+### 2. Missing system EGL libraries (VERY common on Ubuntu)
 
-### 4️⃣ Cable / Power issue check
+You likely are missing:
 
-USB webcam হলে খুব common:
-
-- Cable একটু নড়লে off হয়
+- `libegl1`
     
-- Low-quality USB cable  
-    👉 অন্য cable থাকলে একবার try করো
+- `libgl1-mesa-dri`
+    
+- `mesa-vulkan-drivers`
     
 
----
+### 3. Chrome GPU crash blacklist got triggered
 
-### 5️⃣ Browser হলে (Chrome / Firefox)
+After repeated startup failures, Chrome permanently disables GPU:
 
-Camera off হয়ে গেলে browser-level issue হতে পারে।
-
-Chrome:
-
-```
-chrome://settings/content/camera
-```
-
-Firefox:
-
-```
-about:preferences#privacy
-```
-
-একটাই webcam select করা আছে কিনা দেখো।
+> “GPU access is disabled due to frequent crashes”
 
 ---
 
-## 🧪 Stress test (best test)
+## ✅ FIX (do this in order)
+
+### 🔧 Step 1 — install missing graphics libraries
+
+Run:
 
 ```bash
-mpv av://v4l2:/dev/video0
+sudo apt update
+sudo apt install --reinstall \
+libgl1-mesa-dri \
+libegl1 \
+mesa-vulkan-drivers \
+libgbm1
 ```
 
-৫–১০ মিনিট চালু থাকলে → hardware + driver OK  
-এখানেই off হলে → USB power / cable issue almost sure
+Then reboot:
+
+```bash
+sudo reboot
+```
 
 ---
 
-ভালো 👍 এই আউটপুটটাই আসলে প্রমাণ করে 👉 **TLP ইনস্টল আছে**।  
-তুমি শুধু option দাওনি বলে usage দেখাচ্ছে।
+### 🔧 Step 2 — reset Chrome GPU crash state
 
-এখন ঠিকভাবে করি 👇
+After reboot:
+
+```bash
+mv ~/.config/google-chrome/Default/GPUCache ~/.config/google-chrome/Default/GPUCache.backup
+```
+
+(or just reset full profile if needed later)
 
 ---
 
-## 🔥 Step 1 (MOST IMPORTANT): TLP এখনই বন্ধ করে test
+### 🔧 Step 3 — force correct backend
 
-এটা দাও:
-
-```bash
-sudo tlp stop
-```
-
-তারপর **সাথে সাথে**:
+Run Chrome like this:
 
 ```bash
-cheese
+google-chrome --use-gl=egl --ignore-gpu-blocklist
 ```
-
-বা যেই app-এ webcam off হয়, সেটা চালাও।
-
-⏱️ ৫–১০ মিনিট দেখো —  
-👉 **যদি এখন off না হয়** → 100% confirmed: **TLP USB power কাটছে**।
 
 ---
 
-## 🔒 Step 2: Permanent fix (TLP থাকলেও webcam safe)
+### 🔧 Step 4 — if still broken (important test)
 
-এখন config edit করো:
-
-```bash
-sudo nano /etc/tlp.conf
-```
-
-এই লাইনগুলো খুঁজে বের করো (থাকলে uncomment করো, না থাকলে add করো):
-
-```
-USB_AUTOSUSPEND=0
-USB_BLACKLIST=""
-```
-
-Save করো → তারপর:
+Try Chromium:
 
 ```bash
-sudo systemctl restart tlp
+sudo snap install chromium
 ```
 
-Reboot-এর পরেও webcam stable থাকবে ✅
+If Chromium works → Chrome package is broken  
+If Chromium also fails → system EGL stack issue
 
 ---
 
-## 🧪 Extra confirm (optional but useful)
+## 🎯 What I strongly suspect
 
-```bash
-tlp-stat -u
-```
+Given your logs:
 
-এখানে webcam device-এর পাশে `autosuspend = disabled` দেখা উচিত।
+> `gl=none,angle=none`
 
----
+This usually happens when:
 
-## যদি এখনো off হয় 😬
+👉 **EGL/OpenGL loader in Chrome is broken or missing system EGL libs**
 
-তখন আমরা নিশ্চিত হবো এটা **hardware / cable / USB port** issue।
-
-সেক্ষেত্রে next step:
-
-```bash
-dmesg | tail -30
-```
-
-(webcam off হওয়ার ঠিক পরেই)
+NOT a GPU problem.
 
 ---
 
-### এখন আমাকে শুধু এটা বলো 👇
+## 🧾 Summary
 
-`sudu tlp stop` দেওয়ার পর **off হওয়া বন্ধ হয়েছে কি না**?
+Your AMD GPU is fine.
 
-এটা বললেই আমি জানব—  
-🔧 **software fix done** নাকি  
-🔌 **hardware verdict দিতে হবে**
+The real problem is:
+
+> Chrome cannot initialize EGL/OpenGL backend → GPU process crashes → WebGL disabled.
+
+---
+
+If you want, I can give you a **1-command permanent fix** (clean reinstall + correct flags + guaranteed Figma working setup).

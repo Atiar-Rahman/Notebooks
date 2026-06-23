@@ -396,13 +396,15 @@ If you use **Docker Compose**:
 
 # 10. Advanced Docker Commands
 
-|Command|Description|
-|---|---|
-|`docker cp`|Copy files between host/container|
-|`docker diff`|Show file changes|
-|`docker export`|Export container|
-|`docker import`|Import filesystem|
-|`docker commit`|Create image from container|
+| Command         | Description                       |
+| --------------- | --------------------------------- |
+| `docker cp`     | Copy files between host/container |
+| `docker diff`   | Show file changes                 |
+| `docker export` | Export container                  |
+| `docker import` | Import filesystem                 |
+| `docker commit` | Create image from container       |
+
+
 
 Example:
 
