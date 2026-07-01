@@ -1,4 +1,4 @@
-Yes — **there are real errors in this model**, and because of them Django will fail on **makemigrations / migrate / createsuperuser**.
+**there are real errors in this model**, and because of them Django will fail on **makemigrations / migrate / createsuperuser**.
 I’ll explain **what’s wrong**, **why it happens**, and then give you the **correct production-ready fix**.
 
 ---

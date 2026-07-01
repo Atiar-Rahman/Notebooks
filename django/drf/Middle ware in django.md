@@ -486,6 +486,29 @@ Response
 | Global control              | Endpoint specific       |
 | Performance measure করা যায় | না                      |
 
+--------
+
+# Client-এর আসল IP কীভাবে পাব?
+
+Local development-এ:
+
+```
+ip = request.META.get("REMOTE_ADDR")
+```
+
+Production-এ যদি Nginx বা Cloudflare-এর মতো reverse proxy ব্যবহার করেন, তাহলে প্রায়ই `REMOTE_ADDR`-এ proxy-এর IP পাওয়া যায়। সেক্ষেত্রে সাধারণত `X-Forwarded-For` header থেকে client IP নেওয়া হয় (এটি কেবল তখনই বিশ্বাস করবেন যখন proxy আপনার নিয়ন্ত্রণে এবং সঠিকভাবে configure করা আছে):
+
+```
+x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")if x_forwarded_for:    ip = x_forwarded_for.split(",")[0].strip()else:    ip = request.META.get("REMOTE_ADDR")
+```
+
+## বাস্তবে কোনটি ব্যবহার করা হয়?
+
+- **ছোট প্রজেক্ট:** Python list
+- **সাধারণ production:** Database + Django Admin
+- **High traffic:** Redis
+- **বড় কোম্পানি:** Cloudflare/Nginx + Redis + Database (একসাথে)
+-
 ---
 
 # 🚀 তোমার ML Surveillance Project এ কী করা উচিত?

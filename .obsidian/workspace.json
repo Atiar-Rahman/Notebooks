@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c2c82ff84bc02bfe",
+        "id": "3b26f5bd4e0a36f4",
         "type": "tabs",
         "children": [
           {
-            "id": "ac4f3a14afd16ac7",
+            "id": "0c032bdc71752cc8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "django/drf/User Customization.md",
+                "file": "django/drf/migration.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "User Customization"
+              "title": "migration"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327.5,
-    "collapsed": true
+    "width": 327.5
   },
   "right": {
     "id": "0a65343956ed9a8d",
@@ -170,53 +169,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "ac4f3a14afd16ac7",
+  "active": "0c032bdc71752cc8",
   "lastOpenFiles": [
-    "web/react/hook.md",
-    "web/react/js before  start react.md",
-    "web/local storage.md",
-    "web/ES6 js3.md",
-    "web/ES6 js2.md",
-    "web/ES6 js1.md",
+    "django/drf/Middle ware in django.md",
+    "All subject task fall-2025/motivation  related/daily post.md",
+    "All subject task fall-2025/postgresql/topic.md",
+    "All subject task fall-2025/motivation  related",
+    "All subject task fall-2025/postgresql/windows cli.md",
     "web/ES6 js.md",
+    "All subject task fall-2025/postgresql",
+    "All subject task fall-2025/English/60 days english course.md",
+    "All subject task fall-2025/English/Tense foundation.md",
+    "web/react/firebase/what is firebase authentication.md",
+    "fiver/links.md",
+    "web/react/firebase",
+    "().md",
+    "django/drf/social auth/firebase authentication.md",
+    "fiver",
+    "django/drf/social auth/links.md",
+    "django/drf/social auth/final auth.md",
+    "django/drf/social auth/1/social login.md",
+    "All subject task fall-2025/English/Untitled",
+    "All subject task fall-2025/English/subject.md",
+    "All subject task fall-2025/English/verb.md",
+    "All subject task fall-2025/English/tense.md",
+    "django/drf/social auth/implementation.md",
+    "django/drf/social auth/1",
+    "django/drf/social auth/guide.md",
+    "django/drf/social auth/google auth.md",
+    "django/drf/social auth/django-allauth + dj-rest-auth.md",
+    "django/drf/social auth/dj-rest-auth.md",
+    "django/drf/social auth/all auth.md",
+    "django/drf/social auth/update serializer.md",
+    "web/Html5.md",
+    "web/Html.md",
+    "django/drf/social auth",
+    "django/django template",
+    "web/react/component design",
     "Pasted image 20260618224458.png",
     "Pasted image 20260618224422.png",
     "Pasted image 20260618224257.png",
     "Pasted image 20260618223913.png",
     "Pasted image 20260430095630.png",
     "Pasted image 20260216190736.png",
-    "web/Js DOM.md",
-    "web/design tools.md",
-    "All subject task fall-2025/Econimics/final.md",
-    "All subject task fall-2025/cyber security/command.md",
     "All subject task fall-2025/cyber security",
-    "web/motion.md",
-    "web/js.md",
-    "web/motion+gsap.md",
-    "web/CSS animation.md",
-    "Docker/docker command.md",
-    "Docker/complete example.md",
-    "web/react/deploy in docker.md",
     "Pasted image 20260618224617.png",
     "Pasted image 20260618224601.png",
     "Pasted image 20260618224345.png",
-    "Docker/docker python and react complete note.md",
-    "Docker/docker space cleenup.md",
-    "Docker/docker tutorial1.md",
-    "Docker/docker login problem solve.md",
-    "Docker/docker setup.md",
-    "Docker/command.md",
-    "web/CSS3.md",
-    "web/CSS.md",
-    "Machine learning/Greeks for Greeks",
-    "daily routine",
-    "All subject task fall-2025/ml/seaborn",
-    "All subject task fall-2025/ml/matplotlib",
-    "All subject task fall-2025/ml/pandas",
-    "All subject task fall-2025/ml",
-    "All subject task fall-2025/ml/numpy",
-    "Excel and others note",
-    "django/drf/radis",
     "Pasted image 20260430100021.png"
   ]
 }

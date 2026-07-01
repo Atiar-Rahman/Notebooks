@@ -909,31 +909,31 @@ return f"Prescription for {self.patient.first_name}"
 
 class Invoice(models.Model):
 
-STATUS_CHOOSE = [
-
-('paid', 'PAID'),
-
-('unpaid', 'UNPAID'),
-
-]
+	STATUS_CHOOSE = [
+	
+	('paid', 'PAID'),
+	
+	('unpaid', 'UNPAID'),
+	
+	]
+	
+	  
+	
+	patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='invoices')
+	
+	admission = models.ForeignKey(Admission, on_delete=models.SET_NULL, null=True, blank=True, related_name='invoices')
+	
+	total_amount = models.FloatField()
+	
+	status = models.CharField(max_length=10, choices=STATUS_CHOOSE, default='unpaid')
+	
+	created_at = models.DateTimeField(auto_now_add=True)
 
   
 
-patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='invoices')
-
-admission = models.ForeignKey(Admission, on_delete=models.SET_NULL, null=True, blank=True, related_name='invoices')
-
-total_amount = models.FloatField()
-
-status = models.CharField(max_length=10, choices=STATUS_CHOOSE, default='unpaid')
-
-created_at = models.DateTimeField(auto_now_add=True)
-
-  
-
-def __str__(self):
-
-return f"Invoice - {self.patient.first_name}"
+	def __str__(self):
+	
+	return f"Invoice - {self.patient.first_name}"
 
   
   
@@ -946,31 +946,31 @@ return f"Invoice - {self.patient.first_name}"
 
 class Payment(models.Model):
 
-METHOD_CHOOSE = [
-
-('cash', 'CASH'),
-
-('card', 'CARD'),
-
-('online', 'ONLINE'),
-
-]
-
-  
-
-invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='payments')
-
-amount = models.FloatField()
-
-method = models.CharField(max_length=10, choices=METHOD_CHOOSE)
-
-paid_at = models.DateTimeField(auto_now_add=True)
-
-  
-
-def __str__(self):
-
-return f"Payment for {self.invoice.id}"
+	METHOD_CHOOSE = [
+	
+	('cash', 'CASH'),
+	
+	('card', 'CARD'),
+	
+	('online', 'ONLINE'),
+	
+	]
+	
+	  
+	
+	invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='payments')
+	
+	amount = models.FloatField()
+	
+	method = models.CharField(max_length=10, choices=METHOD_CHOOSE)
+	
+	paid_at = models.DateTimeField(auto_now_add=True)
+	
+	  
+	
+	def __str__(self):
+	
+	return f"Payment for {self.invoice.id}"
 ```
 
 
