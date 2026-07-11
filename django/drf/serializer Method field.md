@@ -918,3 +918,158 @@ def get_<field_name>(self, obj):
 
 চাও হলে আমি তোমার project অনুযায়ী
 👉 **ModelSerializer full custom template (production-ready)** বানিয়ে দিতে পারি 🚀
+হ্যাঁ, **পারবেন**, তবে `SerializerMethodField`-এর behavior ভালোভাবে বুঝতে হবে।
+
+`SerializerMethodField` শুধুমাত্র **read-only output field**। এটি:
+
+* ✅ API response-এ দেখানো যায়।
+* ❌ `validated_data`-তে আসে না।
+* ❌ `create()` বা `update()`-এ input হিসেবে পাওয়া যায় না।
+
+তাই যদি সেই field-এর value অন্য database/table-এ save করতে চান, তাহলে `create()` বা `update()`-এর মধ্যে আবার সেই value calculate করতে হবে অথবা serializer-এর method call করতে হবে।
+
+---
+
+## Example
+
+ধরুন `Product` model:
+
+```python
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+```
+
+Response-এ discount price দেখাতে চান।
+
+```python
+class ProductSerializer(serializers.ModelSerializer):
+    discount_price = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Product
+        fields = ["id", "name", "price", "discount_price"]
+
+    def get_discount_price(self, obj):
+        return obj.price * 0.9
+```
+
+Response
+
+```json
+{
+    "id": 1,
+    "name": "Laptop",
+    "price": 1000,
+    "discount_price": 900
+}
+```
+
+---
+
+## এখন অন্য model-এ save করতে চাই
+
+```python
+class ProductLog(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    discount_price = models.FloatField()
+```
+
+`create()`-এ
+
+```python
+class ProductSerializer(serializers.ModelSerializer):
+    discount_price = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Product
+        fields = ["id", "name", "price", "discount_price"]
+
+    def get_discount_price(self, obj):
+        return obj.price * 0.9
+
+    def create(self, validated_data):
+        product = Product.objects.create(**validated_data)
+
+        discount_price = self.get_discount_price(product)
+
+        ProductLog.objects.create(
+            product=product,
+            discount_price=discount_price
+        )
+
+        return product
+```
+
+এখানে `discount_price` database-এ ছিল না, কিন্তু method থেকে calculate করে অন্য model-এ save করলাম।
+
+---
+
+## আরও ভালো Practice
+
+যদি একই logic অনেক জায়গায় লাগে, তাহলে `SerializerMethodField`-এর method reuse না করে business logic আলাদা function/service-এ রাখুন।
+
+```python
+def calculate_discount(price):
+    return price * 0.9
+```
+
+Serializer
+
+```python
+class ProductSerializer(serializers.ModelSerializer):
+    discount_price = serializers.SerializerMethodField()
+
+    def get_discount_price(self, obj):
+        return calculate_discount(obj.price)
+
+    def create(self, validated_data):
+        product = Product.objects.create(**validated_data)
+
+        ProductLog.objects.create(
+            product=product,
+            discount_price=calculate_discount(product.price)
+        )
+
+        return product
+```
+
+এতে logic এক জায়গায় থাকবে এবং reuse করা সহজ হবে।
+
+---
+
+## যদি API request থেকেই value আসে?
+
+যদি client `discount_price` পাঠায়:
+
+```json
+{
+    "name": "Laptop",
+    "price": 1000,
+    "discount_price": 900
+}
+```
+
+তাহলে **`SerializerMethodField` ব্যবহার করবেন না**, কারণ এটি input নেয় না।
+
+এর পরিবর্তে:
+
+```python
+discount_price = serializers.FloatField(write_only=True)
+```
+
+অথবা
+
+```python
+discount_price = serializers.FloatField(required=False)
+```
+
+ব্যবহার করুন।
+
+---
+
+### Senior Django Developer Rule
+
+* `SerializerMethodField` → শুধুমাত্র **response** তৈরির জন্য।
+* Database-এ save করার business logic → `create()`, `update()`, service layer, বা model method-এ রাখুন।
+* একই calculation যদি response এবং save—দুই জায়গাতেই লাগে, তাহলে calculation-টি আলাদা helper/service function-এ রাখুন, `get_<field>()`-এর উপর নির্ভর করবেন না। এটি বেশি maintainable এবং testable।

@@ -325,7 +325,7 @@
 
 ---
 
-## 📅 আগামীকাল থেকে শুরু হবে **Day 1 – Spoken English Master Course**
+# 📅 আগামীকাল থেকে শুরু হবে **Day 1 – Spoken English Master Course**
 
 **Day 1-এ আমরা শিখব:**
 
@@ -359,7 +359,7 @@
 
 ---
 
-# 🎯 Rule 1: বাংলা থেকে ইংরেজি অনুবাদ করা বন্ধ করো
+## 🎯 Rule 1: বাংলা থেকে ইংরেজি অনুবাদ করা বন্ধ করো
 
 অনেকেই মনে মনে এমন করে:
 
@@ -404,7 +404,7 @@ I want water.
 
 ---
 
-# 🎯 Rule 2: ছোট বাক্যে কথা বলো
+## 🎯 Rule 2: ছোট বাক্যে কথা বলো
 
 ❌
 
@@ -422,7 +422,7 @@ I'll sleep now.
 
 ---
 
-# 🎯 Rule 3: প্রতিদিন জোরে জোরে বলো
+## 🎯 Rule 3: প্রতিদিন জোরে জোরে বলো
 
 Reading নয়।
 
@@ -434,13 +434,13 @@ Speaking.
 
 ---
 
-# 🎯 Rule 4: ভুল করতে ভয় পেয়ো না
+## 🎯 Rule 4: ভুল করতে ভয় পেয়ো না
 
 Wrong English is better than No English.
 
 ---
 
-# 🎯 Rule 5: প্রতিদিন একই বাক্য Repeat করো
+## 🎯 Rule 5: প্রতিদিন একই বাক্য Repeat করো
 
 কমপক্ষে
 
@@ -448,7 +448,7 @@ Wrong English is better than No English.
 
 ---
 
-# 📖 Greetings
+## 📖 Greetings
 
 ## Morning
 
@@ -490,7 +490,7 @@ Good night.
 
 ---
 
-# 📖 Greetings Reply
+## 📖 Greetings Reply
 
 Good morning!
 
@@ -522,7 +522,7 @@ How are you?
 
 ---
 
-# 📖 30 Most Common Greetings
+## 📖 30 Most Common Greetings
 
 | English           | বাংলা                             |
 | ----------------- | --------------------------------- |
@@ -544,7 +544,7 @@ How are you?
 
 ---
 
-# 👤 Self Introduction (Basic)
+## 100DaysOfCode  👤 Self Introduction (Basic)
 
 ### Model
 
@@ -570,7 +570,7 @@ Thank you.
 
 ---
 
-# 🗣️ Useful Daily Sentences (40)
+## 🗣️ Useful Daily Sentences (40)
 
 ## Morning
 
@@ -680,7 +680,7 @@ Thank you.
 
 ---
 
-# 🎭 Dialogue 1
+## 🎭 Dialogue 1
 
 A: Hello!
 
@@ -696,7 +696,7 @@ B: Nice to meet you too.
 
 ---
 
-# 🎭 Dialogue 2
+## 🎭 Dialogue 2
 
 A: Good morning.
 
@@ -708,7 +708,7 @@ B: It's going well.
 
 ---
 
-# 🎭 Dialogue 3
+## 🎭 Dialogue 3
 
 A: What's your name?
 
@@ -720,7 +720,7 @@ B: I'm from Bangladesh.
 
 ---
 
-# 🎭 Dialogue 4
+## 🎭 Dialogue 4
 
 A: What do you do?
 
@@ -728,7 +728,7 @@ B: I'm a Computer Science student.
 
 ---
 
-# 🎭 Dialogue 5
+## 🎭 Dialogue 5
 
 A: What are you learning?
 
@@ -736,7 +736,7 @@ B: I'm learning Python and Django.
 
 ---
 
-# 🔊 Pronunciation Tips
+## 🔊 Pronunciation Tips
 
 | Word        | উচ্চারণ (সহজভাবে) |
 | ----------- | ----------------- |
@@ -753,7 +753,7 @@ B: I'm learning Python and Django.
 
 ---
 
-# 🎯 Speaking Challenge
+## 🎯 Speaking Challenge
 
 নিচের ১০টি বাক্য **জোরে জোরে ১০ বার** বলো।
 
@@ -770,7 +770,7 @@ B: I'm learning Python and Django.
 
 ---
 
-# 📝 Homework
+## 📝 Homework
 
 ## Part 1: নিজের পরিচয় লিখো (৮–১০টি বাক্য)
 
@@ -819,7 +819,7 @@ B: I'm learning Python and Django.
 
 ---
 
-# ✅ Mini Quiz
+### ✅ Mini Quiz
 
 **1. "কেমন আছেন?" এর ইংরেজি কী?**
 
@@ -877,7 +877,7 @@ C. Good night.
 
 ---
 
-# 📅 আগামীকাল (Day 2)
+## 📅 আগামীকাল (Day 2)
 
 আমরা শিখব:
 
@@ -907,9 +907,9 @@ C. Good night.
 
 ---
 
-# 🎯 Lesson 1: Advanced Self Introduction
+## 🎯 Lesson 1: Advanced Self Introduction
 
-## 📖 Model Self Introduction (Student)
+### 📖 Model Self Introduction (Student)
 
 > Hello!
 > My name is **Md. Atiar Rahman**.
@@ -924,7 +924,7 @@ C. Good night.
 
 ---
 
-# 🎯 Lesson 2: Introducing Your Family
+## 🎯 Lesson 2: Introducing Your Family
 
 ### Vocabulary
 
@@ -941,7 +941,7 @@ C. Good night.
 
 ---
 
-## Example
+### Example
 
 > There are **five members** in my family.
 
@@ -973,9 +973,9 @@ C. Good night.
 
 ---
 
-# 🎯 Lesson 3: Talking About Your Country
+## 🎯 Lesson 3: Talking About Your Country
 
-## Example
+### Example
 
 > I am from Bangladesh.
 
@@ -1007,9 +1007,9 @@ C. Good night.
 
 ---
 
-# 🎯 Lesson 4: Talking About Your City
+## 🎯 Lesson 4: Talking About Your City
 
-## Example
+### Example
 
 > I live in Dhaka.
 
@@ -1035,7 +1035,7 @@ C. Good night.
 
 ---
 
-# 🎯 Lesson 5: Talking About Education
+## 🎯 Lesson 5: Talking About Education
 
 ### Useful Sentences
 
@@ -1075,9 +1075,9 @@ I want to improve my English.
 
 ---
 
-# 📚 50 Daily Speaking Sentences
+## 📚 50 Daily Speaking Sentences
 
-## Self
+### Self
 
 1. My name is Atiar.
 2. I am 22 years old.
@@ -1092,7 +1092,7 @@ I want to improve my English.
 
 ---
 
-## Family
+### Family
 
 11. I have a small family.
 12. My father is very kind.
@@ -1107,7 +1107,7 @@ I want to improve my English.
 
 ---
 
-## Education
+### Education
 
 21. I go to university every day.
 22. I attend classes regularly.
@@ -1122,7 +1122,7 @@ I want to improve my English.
 
 ---
 
-## Country & City
+### Country & City
 
 31. Bangladesh is beautiful.
 32. Dhaka is a large city.
@@ -1137,7 +1137,7 @@ I want to improve my English.
 
 ---
 
-## Goals
+### Goals
 
 41. I want to improve my English.
 42. I practice speaking every day.
@@ -1152,7 +1152,7 @@ I want to improve my English.
 
 ---
 
-# 🎭 Dialogue 1 – Self Introduction
+## 🎭 Dialogue 1 – Self Introduction
 
 **A:** Hello! What's your name?
 

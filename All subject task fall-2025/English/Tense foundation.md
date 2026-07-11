@@ -1112,16 +1112,16 @@ Examples
 
 # 9. Fill in the blanks
 
-1. He ____ football. (play)
-2. She ____ English. (study)
-3. Rahim ____ rice. (eat)
-4. They ____ TV. (watch)
-5. We ____ books. (read)
-6. My father ____ hard. (work)
-7. The sun ____ in the east. (rise)
-8. She ____ to school. (go)
-9. Birds ____ in the sky. (fly)
-10. Karim ____ a letter. (write)
+1. He` ____ `football. (play)
+2. She `____` English. (study)
+3. Rahim `____` rice. (eat)
+4. They `____` TV. (watch)
+5. We `____` books. (read)
+6. My father` ____` hard. (work)
+7. The sun `____` in the east. (rise)
+8. She `____` to school. (go)
+9. Birds`____` in the sky. (fly)
+10. Karim `____` a letter. (write)
 
 ---
 
@@ -1143,7 +1143,7 @@ Examples
 
 **C. Fill in the blank**
 
-Rahim ____ English every day.
+Rahim `____` English every day.
 
 a) study
 
@@ -1485,14 +1485,14 @@ Does Rahim go to school?
 
 # ৮. Fill in the blanks
 
-1. He ______ football. (not/play)
-2. She ______ English. (not/study)
+1. He `______ football. (not/play)
+2. She `______ English. (not/study)
 3. ______ you like coffee?
 4. ______ Rahim go to school?
 5. Where ______ you live?
 6. What ______ she eat?
-7. They ______ meat. (not/eat)
-8. My father ______ TV. (not/watch)
+7. They` ______ meat. (not/eat)
+8. My father `______ TV. (not/watch)
 9. ______ they play cricket?
 10. Why ______ he cry?
 

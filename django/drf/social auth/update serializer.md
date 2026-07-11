@@ -443,3 +443,74 @@ So answer:
 
 **হ্যাঁ, বেশিরভাগ সময়** — কারণ register-এর সময় শুধু essential auth fields handle করলেই হয়।
 বাকি profile/address পরে create/update করতে পারো।
+যদি **login endpoint-এও `username` দেখায়**, তাহলে এর কারণ সাধারণত `dj-rest-auth`-এর **default `LoginSerializer`** এখনও `username` field ব্যবহার করছে।
+
+তোমার setup অনুযায়ী:
+
+* ✅ `User.username = None`
+* ✅ `USERNAME_FIELD = "email"`
+* ✅ `ACCOUNT_USERNAME_REQUIRED = False`
+
+তাহলে login-এ `email` ব্যবহার হওয়ার কথা।
+
+### প্রথমে এটা দেখো
+
+`settings.py`-এ কি আছে?
+
+```python
+REST_AUTH = {
+    "USE_JWT": True,
+}
+```
+
+এছাড়া `LOGIN_SERIALIZER` সেট করেছো কি?
+
+---
+
+### আরেকটা গুরুত্বপূর্ণ বিষয়
+
+Swagger (`drf-yasg`) অনেক সময় serializer cache করে। তাই code পরিবর্তনের পর:
+
+```bash
+python manage.py runserver
+```
+
+restart করো এবং browser hard refresh (Ctrl+Shift+R) দাও।
+
+---
+
+### যদি API documentation-এ এখনও `username` দেখায়
+
+তাহলে custom `LoginSerializer` বানাতে হবে, যেমন:
+
+```python
+from dj_rest_auth.serializers import LoginSerializer
+from rest_framework import serializers
+
+class CustomLoginSerializer(LoginSerializer):
+    username = None
+    email = serializers.EmailField(required=True)
+```
+
+এবং:
+
+```python
+REST_AUTH = {
+    "USE_JWT": True,
+    "LOGIN_SERIALIZER": "users.serializers.CustomLoginSerializer",
+}
+```
+
+---
+
+### আমার ধারণা
+
+তোমার `dj-rest-auth`-এর version অনুযায়ী default login serializer এখনও username expose করছে।
+
+**একটা জিনিস দাও:**
+
+```bash
+pip show dj-rest-auth
+```
+
+বিশেষ করে **Version**-টা। তাহলে আমি তোমার version অনুযায়ী email-only login-এর exact configuration বলতে পারব।
