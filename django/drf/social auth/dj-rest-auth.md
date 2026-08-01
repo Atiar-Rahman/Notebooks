@@ -1,6 +1,3 @@
-আপনি যদি **Django REST Framework** দিয়ে Professional Backend তৈরি করতে চান, তাহলে **dj-rest-auth** খুবই গুরুত্বপূর্ণ একটি package। বিশেষ করে React, Vue, Flutter, Next.js-এর সাথে Authentication করার সময় এটি অনেক সময় বাঁচায়।
-
----
 
 # dj-rest-auth কী?
 
