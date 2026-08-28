@@ -1,5 +1,4 @@
 
-দারুণ। এবার **Django Filter Mastery Course** শুরু করি।
 
 তুমি DRF ভালোই জানো, তাই আমি **production-level** ভাবে শেখাবো। ৪টি লেসন শেষে তুমি যেকোনো API-তে filtering confidently implement করতে পারবে।
 
@@ -2152,6 +2151,9 @@ GET /api/products/
 এটাই production-grade filtering pattern, এবং বেশিরভাগ DRF e-commerce বা marketplace project-এ এই ধরনের architecture ব্যবহার করা হয়।
 না। **সব field-এর জন্য Filter বানানো দরকার নেই।**
 
+----
+
+
 Production-এ **যে field দিয়ে user filter করতে পারবে, শুধু সেই field-গুলোর জন্য filter তৈরি করা হয়।**
 
 ধরো তোমার `Product` model:
@@ -2264,6 +2266,8 @@ GET /products/?max_price=2000
 
 শুধু যেসব field দিয়ে **API consumer (React, Mobile App, Frontend)** filter করবে, সেগুলোর জন্যই `django-filter`-এ filter define করবে। এতে API পরিষ্কার, দ্রুত এবং maintain করা সহজ হয়।
 হ্যাঁ, **`field_name` যেটা দিচ্ছো, সেটা শেষ পর্যন্ত Model-এর field (বা Model relationship-এর field) হতে হবে।**
+
+---
 
 ### Example 1: Model field (Direct)
 
@@ -2381,3 +2385,5 @@ filter_variable = django_filters.Filter(
 * `field_name` → **Model-এর field** অথবা **related model-এর field** (`category__slug`, `brand__name`) হতে হবে।
 
 **সুতরাং উত্তর:** `field_name`-এ যে field দেবে, সেটি অবশ্যই model-এ (বা related model-এ) থাকতে হবে। Filter-এর variable name model-এর field হওয়া বাধ্যতামূলক নয়।
+
+

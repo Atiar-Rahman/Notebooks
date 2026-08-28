@@ -1,3 +1,54 @@
+```python
+from django.db import models
+import uuid
+# Create your models here.
+
+
+class ActiveManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(
+            is_deleted=False
+        )
+
+class DeletedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(
+            is_deleted = True
+        )
+        
+    
+class BaseModel(models.Model):
+    id = models.UUIDField(primary_key=True, editable=False, default=uuid.uuid4)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_deleted = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    
+    
+    objects = ActiveManager()
+    delete_objects = DeletedManager()
+    all_objects = models.Manager()
+    
+    class Meta:
+        abstract = True
+        
+    
+    def soft_delete(self):
+        self.is_deleted = True
+        self.save(update_fields=['is_deleted'])
+    
+    def restore(self):
+        self.is_deleted = False
+        self.save(update_fields=['is_deleted'])
+    
+    def hard_delete(self):
+        self.delete()
+        
+    
+    
+```
+
+
 Soft delete মানে database থেকে row **physically delete না করে**, একটা flag দিয়ে mark করা:
 
 ```text

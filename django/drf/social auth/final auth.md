@@ -697,6 +697,142 @@ export default GoogleButton;
 ```
 
 ---
+Your backend:
+
+```python
+from dj_rest_auth.registration.views import SocialLoginView
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+
+
+class GoogleLoginView(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+```
+
+uses `GoogleOAuth2Adapter`, which by default expects a **Google OAuth access token**.
+
+So your current React code:
+
+```javascript
+const token = credentialResponse.credential;
+
+{
+    access_token: token
+}
+```
+
+is **not correct** because:
+
+```javascript
+credentialResponse.credential
+```
+
+from:
+
+```javascript
+<GoogleLogin />
+```
+
+is an **ID token**, not an access token.
+
+---
+
+## Solution 1 (Recommended): Use `useGoogleLogin` with access token
+
+Change your React implementation:
+
+```javascript
+import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
+
+const GoogleButton = () => {
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: async (tokenResponse) => {
+
+            const res = await axios.post(
+                "http://localhost:8000/api/auth/google/",
+                {
+                    access_token: tokenResponse.access_token
+                }
+            );
+
+            console.log(res.data);
+
+            localStorage.setItem("access", res.data.access);
+            localStorage.setItem("refresh", res.data.refresh);
+        },
+
+        onError: () => {
+            console.log("Google Login Failed");
+        }
+    });
+
+
+    return (
+        <button onClick={googleLogin}>
+            Login with Google
+        </button>
+    );
+};
+
+export default GoogleButton;
+```
+
+Now the request body becomes:
+
+```json
+{
+    "access_token": "ya29.xxxxxxxxx"
+}
+```
+
+which matches `GoogleOAuth2Adapter`.
+
+---
+
+## Solution 2: Keep `<GoogleLogin />`
+
+If you want to keep:
+
+```javascript
+import { GoogleLogin } from "@react-oauth/google";
+```
+
+then your backend needs to handle `id_token`.
+
+Your request would be:
+
+```javascript
+{
+    "id_token": credentialResponse.credential
+}
+```
+
+but `GoogleOAuth2Adapter` alone is not designed for that flow.
+
+---
+
+### Your current setup should be:
+
+React:
+
+```
+useGoogleLogin()
+        |
+        ↓
+access_token
+        |
+        ↓
+POST /api/auth/google/
+        |
+        ↓
+GoogleOAuth2Adapter
+        |
+        ↓
+Django user + JWT tokens
+```
+
+So for your existing Django code, switch from `GoogleLogin` to `useGoogleLogin`.
 
 # Github Login
 

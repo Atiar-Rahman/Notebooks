@@ -1,6 +1,3 @@
-If you want to **block YouTube on Ubuntu**, here are some good apps and methods you can use 👇
-
----
 
 ## 1️⃣ 🛡️ **Cold Turkey**
 
@@ -38,11 +35,9 @@ sudo dpkg -i filename.deb
 ❌ Not very strong blocking
 
 ---
-
 ## 3️⃣ 🌐 Browser Extension (Easy Method)
 
 If you use Chrome or Firefox:
-
 ### 🔹 **BlockSite**
 
 * Add to Chrome/Firefox
@@ -54,7 +49,6 @@ If you use Chrome or Firefox:
 ❌ Can be removed easily
 
 ---
-
 ## 4️⃣ 💻 Hosts File Method (Free & Powerful)
 
 This is the strongest **free method**.
@@ -93,20 +87,9 @@ If you want to block YouTube for entire WiFi:
 ❌ Requires router access
 
 ---
-
 # 🔥 My Recommendation (For You)
 
 Since you are a CSE student and use Ubuntu for projects:
 
 👉 Use **hosts file method + BlockSite extension together**
 This gives double protection.
-
----
-
-If you want, tell me:
-
-* Do you want temporary blocking?
-* Or permanent blocking?
-* Only browser or whole system?
-
-I’ll give you exact step-by-step setup.
