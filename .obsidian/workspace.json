@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "219322ae8a06c01e",
+        "id": "c1517c63880f80b6",
         "type": "tabs",
         "children": [
           {
-            "id": "27f758a526ca3bfa",
+            "id": "6ea90f6eeeef2b45",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "django/drf/drf mastary/django model design.md",
+                "file": "data structure/Module/dModul1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "django model design"
+              "title": "dModul1"
             }
           }
         ]
@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316.5,
-    "collapsed": true
+    "width": 316.5
   },
   "right": {
     "id": "0a65343956ed9a8d",
@@ -172,53 +171,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "27f758a526ca3bfa",
+  "active": "6ea90f6eeeef2b45",
   "lastOpenFiles": [
-    "django/drf/drf mastary/search filter.md",
-    "django/drf/drf mastary/django model design.md",
-    "django/drf/drf mastary/Untitled 1.md",
-    "django/Model/softdelete.md",
-    "django/drf/drf mastary/softdelete mastary.md",
-    "django/drf/softdelete apply.md",
-    "django/drf/drf mastary/Django Filter Mastery.md",
-    "django/drf/filtering.md",
-    "aapractice/hello.md",
-    "www.google.com.md",
+    "Excel and others note/django orm.md",
+    "django/query/bulk create any data.md",
+    "C-net/project create.md",
+    "Excel and others note/class wise 1.md",
+    "Excel and others note/Logistics-Delivery Management.md",
+    "Excel and others note/Event-Ticket Booking System.md",
+    "Excel and others note/Accounting-Expense System.md",
+    "Excel and others note/Warehouse-Inventory System.md",
+    "Excel and others note/Food Delivery Platform.md",
+    "Excel and others note/Job Marketplace.md",
+    "Excel and others note/University Management System.md",
+    "Excel and others note/Hospital Management System.md",
+    "Excel and others note/Vehicle Rental System.md",
+    "Excel and others note/Property-Rental Managemen.md",
+    "Excel and others note/Multi-Vendor Hotel Management.md",
+    "Excel and others note/ecomerce.md",
+    "BCS/computer fundamental/computer fundamental.md",
+    "BCS/computer fundamental/day.md",
+    "BCS/computer fundamental/sylebus.md",
+    "BCS/computer fundamental/Untitled.md",
+    "ai tool/ollama model use/model setup.md",
+    "BCS/computer fundamental",
+    "ai tool/Untitled.md",
+    "ai tool/ollama model use",
+    "English Vokubolary/speaking class/roadmap.md",
+    "English Vokubolary/master revison/abstract noun.md",
+    "English Vokubolary/master revison/collective noun and material noun.md",
+    "English Vokubolary/master revison/propernoun and common noun.md",
+    "ML engineer/data collection",
+    "ML engineer/writter/Untitled",
+    "ML engineer/writter/milestone",
+    "ML engineer/writter",
+    "ML engineer/topics/milestone",
+    "ML engineer/topics",
+    "job/new/Pasted image 20260905194655.png",
+    "job/new",
+    "database",
+    "images/Pasted image 20260216190736.png",
+    "images/Screenshot from 2026-04-03 14-57-48.png",
+    "images/Pasted image 20260430095630.png",
+    "images/Pasted image 20260618224345.png",
     "aapractice/images/ab.jpeg",
     "aapractice/images/ad.png",
     "aapractice/images/ac.jpeg",
     "aapractice/images/images.jpeg",
-    "![[Pasted.md",
-    "Pasted image 20260813174044.png",
-    "aapractice/images",
-    "aapractice/Untitled.md",
-    "aapractice",
-    "routine.md",
-    "web/v8 engine in chrome browser.md",
-    "web/tailwind css component library.md",
-    "web/Lottie animation.md",
-    "().md",
-    "web/google front use in react and next.md",
-    "English Vokubolary/master revison/abstract noun.md",
-    "Docker/devops/written.md",
-    "English Vokubolary/master revison/collective noun and material noun.md",
-    "English Vokubolary/master revison/propernoun and common noun.md",
-    "django/drf/social auth/final implement.md",
-    "English Vokubolary/master revison",
-    "django/drf/social auth/final auth.md",
-    "django/drf/social auth/email setup.md",
-    "django/drf/social auth/dj-rest-auth.md",
-    "Screenshot from 2026-04-03 14-58-36.png",
-    "Screenshot from 2026-04-03 14-57-48.png",
-    "Pasted image 20260618224617.png",
-    "Pasted image 20260618224601.png",
-    "Pasted image 20260618224458.png",
-    "Docker/devops",
-    "English Vokubolary/speaking class",
-    "BCS",
-    "booklist",
-    "interview peparation",
-    "web/interview",
-    "ai tool/video make script"
+    "images/Pasted image 20260813174044.png"
   ]
 }
