@@ -2717,7 +2717,7 @@ id | name      | category    | price | stock
 # 3. `create()` — সবচেয়ে সহজ Create
 
 নতুন Product:
-
+ 
 ```python
 product = Product.objects.create(
     name="Keyboard",
@@ -2858,7 +2858,7 @@ product.stock = 12
 product.save()
 ```
 
-শেষ value-গুলো save হবে।
+শেষ value-গুলো save হবে। 
 
 ---
 
@@ -3300,7 +3300,7 @@ product, created = Product.objects.get_or_create(
         "category": "Accessories",
         "price": 3000,
         "stock": 50,
-    }
+    } 
 )
 ```
 
@@ -3515,7 +3515,7 @@ code = models.CharField(
 # 37. `get_or_create()` + Transaction
 
 Django `get_or_create()` এবং `update_or_create()` concurrency-এর কিছু race condition handle করার চেষ্টা করে, কিন্তু proper database uniqueness constraint অত্যন্ত important।
-
+ 
 Professional rule:
 
 ```text
@@ -3545,7 +3545,7 @@ Create Payment
 যদি Booking তৈরি হয় কিন্তু Payment fail করে?
 
 সমস্যা।
-
+  
 তাই:
 
 ```python
@@ -3889,19 +3889,19 @@ product.save(
 
 এটা save করে রাখো:
 
-|Situation|Best choice|
-|---|---|
-|Single create|`create()`|
-|Create with custom pre-save object manipulation|`Product(...)` + `save()`|
-|Single object update|object + `save()`|
-|Same update for many rows|`update()`|
-|Many new objects|`bulk_create()`|
-|Many existing objects, different values|`bulk_update()`|
-|Delete one|`object.delete()`|
-|Delete many|`QuerySet.delete()`|
-|Get or create|`get_or_create()`|
-|Update or create|`update_or_create()`|
-|Multiple related changes|`transaction.atomic()`|
+| Situation                                       | Best choice               |
+| ----------------------------------------------- | ------------------------- |
+| Single create                                   | `create()`                |
+| Create with custom pre-save object manipulation | `Product(...)` + `save()` |
+| Single object update                            | object + `save()`         |
+| Same update for many rows                       | `update()`                |
+| Many new objects                                | `bulk_create()`           |
+| Many existing objects, different values         | `bulk_update()`           |
+| Delete one                                      | `object.delete()`         |
+| Delete many                                     | `QuerySet.delete()`       |
+| Get or create                                   | `get_or_create()`         |
+| Update or create                                | `update_or_create()`      |
+| Multiple related changes                        | `transaction.atomic()`    |
 
 ---
 
