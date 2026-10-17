@@ -146,3 +146,13 @@ my-project/
 ```
 
 
+
+> a excercise
+
+# feature
+- **feature 1** brief explanation of key capability. 
+
+
+# Equation
+
+$x^2 +y^2=2$
